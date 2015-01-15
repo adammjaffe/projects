@@ -1,0 +1,30 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 Adam Jaffe\
+4.20.13\
+Python\
+Professor Cannon\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc
+\cf0 \ul \ulc0 Assignment 5-Bulls and Cows GUI\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ulnone 	This program creates a GUI for the user to play the game Bulls and Cows. The code is easy to use. The user enters a 4-digit guess for the game by typing the guess in the entry label at the top right and pressing the guess button int eh bottom left. The user can also choose to reset the game at any time by pressing the 'Play Again' button, or quit with the 'Quit' button.\
+\
+	I import the Tkinter and bulls_and_cows1 modules at the beginning because they are useful in making the GUI and in running the game, respectively. I create a class called MyGUI and define several code groups within the class. I also establish several important variables: the total_guesses variable counts the number of times the user has guessed over the course of one gameplay session (it is used to calculate the average guesses per win statistic); the times_played variable counts the number of times the user plays in a given gameplay session (it is used to calculate the guesses per win statistic); the guess_number variable says which number guess the user will make and helps the GUI function determine which label to fill; the other_guesses_number counts the number of guesses made (it is used to help calculate the total number of guesses in a gameplay session); the bulls variable keeps track of how many bulls the user has (it is used to determine whether or not the user has won); finally, a number variable is a randomly-generated list representing a number (it is the number the user tries to guess during each round of gameplay).\
+\
+	The first function within the MyGUI class, the __init__ function, creates the GUI for the user. It creates the main window for use, then creates the relevant frames for the labels and button sections. It packs the widgets within each relevant frame. I made a welcome frame, a guess entry frame to take user input, and ten guess frames; from left to right, each guess frame contains a label to hold the guess made, the number of bulls in the guess, and the number of cows in the guess. After that, I created four frames: the first, the notes frame, is used to tell the user if he has won or lost; the second, the answer frame, displays the answer to each round after it is guessed or the user fails ten times; the third, the average guesses frame, tells the user how many guesses it takes on average for him to win (excluding losses and times when the user chooses to play again mid-round); the fourth, the buttons frame, holds the 'Guess,' 'Play Again,' and 'Quit' buttons. Finally, __init__ packs the various frames in order and starts the main loop.\
+\
+	The second function, the update_guess function, updates the different labels in the GUI, determines how many bulls and cows were present in each guess, and determines whether the user has won the game, should be directed to another guess, or has lost the game. It determines which guess number the user is on by counting in descending order  (the guess counter is incremented after each guess, so the game would run improperly if the guess numbers were checked in ascending order). Each guess choice increments the guess counting variable other_guess_number, sets the guess label to show the guessed number, and calculates the number of bulls and cows. If the user has gotten four bulls, he wins, and the program redirects to an end-game function. If the user has not yet won, the next guess variable guess_number is incremented and he is steered to the next guess (a special case is the tenth guess, after which the user loses if he has not guessed the right number and the answer is displayed).\
+	\
+	The third function, the update_avg_guesses function, is the end-game statistics function; it only runs when the user has won. First, it tells him he has won with a note in the notes label; second, it updates the answer label to show what the number was; third, it calculates the total number of guesses and the number of games played in the one gameplay session; fourth, it uses that data to calculate the average number of guesses taken to win a game and displays this info in the avg_guesses label.\
+\
+	The fourth function, the play_again function, is a button that resets the GUI to allow the user to play multiple rounds in a given gameplay session. First, it increments the number of rounds the user has played; second, it resets to blank all of the labels with information; third, it resets the key variables to their values as appropriate for the beginning of a round; fourth, it generates a new random number for the round. After all these variables are defined within the class, the GUI is instantiated for gameplay.\
+\
+	I decided to design my function into these pieces because it allowed for a simple distribution of functionality. The code is relatively inefficient because I could not figure out how to use 'for' loops to generate the different frames and labels for the GUIDs because they need to be defined by strings, not integers. The bulls_and_cows1 module is needed for the function as it contains the functions necessary to create random four-digit numbers and count bulls and cows. \
+\
+}

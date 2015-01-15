@@ -1,0 +1,11 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 My PPM editor is easy to use. It asks the user which .ppm file s/he would like to edit and it asks for a buffer size. I did this because the assignment specified that the buffer array size should be easy to change; it therefore made sense that the user should be able to change it. Next, the program presents a menu of ten possible editing transformations. The user specifies which to perform by writing those numbers, separated by a space (i.e. 1 2 3 4 5 for the first five transformations). This seemed more user-friendly and less repetitive for the user than the suggested menu format. Next, the program performs the required transformations and asks for the name of an output file. The user can specify a .ppm file (or any other kind).\
+\
+I made several design decisions that I feel are important. First, I decided to use a fairly large main() function rather than smaller functions (I originally had a function to determine whether or not the buffer was large enough, a function to read the file, a function to display the menu, etc.). I did this because my original plan required the use of several globals and was generally inefficient. Second, I decided to read the file row by row rather than line by line. I had planned to read the file line by line and include the new-line markers, but this made functions like greyscale() and flip_horizontal() very difficult to organize. Reading whole row by whole row made those functions easier to design and did not affect the way I designed the other functions. Third, I designed the user interface the way I did rather than the way suggested because it was easier for the user and required less code; the only problem was including a couple of Boolean flags to ensure that I could print an error message--but only once. It made sense to divide the other operations into their own functions, so I did that.\
+\
+I think my code is clean, and my program works well. Some design decisions were more obvious than others, and my program is heavily refined from my original plan. I think eliminating globals was a good idea.}

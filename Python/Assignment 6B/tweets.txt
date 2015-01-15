@@ -1,0 +1,1 @@
+{'sentiment': -0.15, 'text': 'yay. little league world series!', 'lon': -81.49445069, 'zipcode': '44146', 'state': 'OH', 'time': datetime.datetime(2011, 8, 28, 19, 2, 28), 'lat': 41.38626364}

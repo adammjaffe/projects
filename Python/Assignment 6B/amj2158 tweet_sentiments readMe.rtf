@@ -1,0 +1,64 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 Adam Jaffe\
+amj2158\
+5.3.13\
+Introduction to Computer Science for Engineers\
+Professor Cannon\
+\
+	My main file sentiments.py is the operating file for my tweet analysis program. I decided not to build a main operating function because that would limit some of the capabilities of the program. Instead, I separated most of my phase I functions (reading the tweets, adding geographical and sentiment data) from my phase II functions (filtering the tweets with the help of **kwargs). I did this because it meant the user only had to load the tweets once (which takes a long time) to do as many filtrations as possible. The downside is that the user must wait and watch to see if the load function is done running, and the separate filter function relies on perfectly-formatted input from the user every time. \
+\
+	Once the file of tweets is loaded and properly formatted, the user can choose to filter it in any way by specifying filter types and filter values. The acceptable filter types are text, zipcode, and state (entered exactly as written and not as strings). Acceptable filter values are individual words if text is specified, a five-digit number if zipcode is specified, and two-digit postal code if state is specified (the user can also enter 'Not in US' for zipcode or state to filter tweets from outside the United States). All filter values must be entered as strings. For example, if the user wanted to filter out all tweets except those containing the word 'python' from zip code 10027 in New York, he would enter \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc
+\cf0 filtration(tweets, text='python', zipcode='10027', state='NY')\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+The function returns the average sentiment value of all the tweets that meet those criteria by first creating a list of all tweets as dictionaries, adding relevant geographic information, calculating and adding the average sentiment value for each tweet, filtering the list into a sublist of tweets according to the user's specifications, and calculating the average sentiment value for that sublist of tweets. It also writes this sublist of tweets to an outfile.\
+\
+The user can also find the state with the most positive average sentiment value for tweets containing a certain word by entering\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc
+\cf0 most_positive(tweets,'word')\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 and the state with the most negative average sentiment value by entering\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc
+\cf0 most_positive(tweets,'word')\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 Should the user want to find the state with the most positive or negative tweets, he could enter None instead of a word in a string.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+	I built several functions in tweet_tools.py to complement those I had written for phase 1:\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural
+\ls1\ilvl0\cf0 {\listtext	\'95	}make_sent(csv) opens the .csv file containing words and their sentiment values. It converts each word-value pair into a dictionary and inserts that dictionary into the list sent_list.\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural
+\ls2\ilvl0\cf0 {\listtext	\'95	}alt_tweet_text(tweet) is an alternative function to tweet_text(j,tweets) that is given an individual tweet and returns the text of the tweet as a string. I made this function because I needed to isolate the text of an individual tweet and the tweet_text function identifies the tweet in question less directly that alt_tweet_text.\
+{\listtext	\'95	}sentiment_calc(tweets_words,sent_list,j) takes the string of text in a tweet and splits it into individual words. For each individual word, the function checks to see if that word has a sentiment value associated with it and, if so, adds that value to the running total for the tweet. Once a total has been calculated for the tweet, it divides that value by the length of the tweet to calculate the average sentiment value. This value is returned as avg_sent.\
+{\listtext	\'95	}add_sent(j,tweets,avg_sent) takes the average sentiment value calculated for a tweet and adds it to the dictionary for that tweet under the dictionary key 'sentiment'.\
+{\listtext	\'95	}tweet_filter(tweets,**kwargs) takes the list of tweets and the filters and values specified by the user and filters the tweets according to those specifications. It first creates three lists, one for each of the three kinds of possible filters: text, zipcode, and state. It also establishes Boolean flags for each type of filter to help check if the filter was specified by the user. For every filter specified by the user, the the corresponding Boolean flag is marked as True to designate that the filtration will be done. Then every tweet in the file is redirected to the appropriate filtering function depending on the filter type. If no filter value is specified, the associated Boolean remains False, and the entire list of tweets is passed through without filtering. Finally, all three lists of filtered tweets are packaged in a tuple called filter_lists.\
+{\listtext	\'95	}filter_by_word(tweet,val,text_filter) takes a tweet, a filter value, and a list of tweets that have already been filtered by text. It converts the text of that tweet into individual words. If the word specified by the user is in that list, the tweet is added to the list of filtered tweets. That list is returned.\
+{\listtext	\'95	}filter_by_zip(tweet,val,zip_filter) takes a tweet, a zip code specified by the user, and the list of tweets that have been filtered by zip code. It checks to see if the zip code value associated with the tweet is the same as specified by the user. If so, that tweet is added to the list of filtered tweets. That list is returned.\
+{\listtext	\'95	}filter_by_state(tweet,val,state_filter) takes a tweet, a state specified by the user, and a list of tweets that have been filtered by state. It checks to see if the state value associated with the tweet is the same as that specified by the user. If so, that tweet is added to the list of filtered tweets. That list is returned.\
+{\listtext	\'95	}list_merger(filter_lists) takes the tuple of the three filtered lists. It creates a master list of cross-filtered tweets and retrieves the three smaller lists from the tuple. It then calculates the length of each of the lists. For whichever of the lists is the shortest, all of the tweets in that list are checked against the other two lists. If a tweet is in all three filtered lists, it meets all of the criteria specified by the user, and it is added to the master list. Once all of the cross-filtered tweets are in the master list, it is returned.\
+{\listtext	\'95	}avg_sent_of_list(filtered_tweets) takes the master list of cross-filtered tweets and calculates the average sentiment value of all the included tweets. It initially sets the total value to zero and finds the number of items in the list. Then, for every tweet in the list, its sentiment value is located from its dictionary key, and that value is added to the total. Once the total has been calculated, it is divided by the length to give the average, and the average is returned. If no tweets meet the filtration criteria specified, it prints a message saying that. If this functionality were not built it, the program would fail when it tried to divide by zero.\
+{\listtext	\'95	}make_postal(csv) reads the file postal_codes.csv which contains the postal codes of the fifty US states. It does this by opening the file, reading each line of the file, retrieving the appropriate information from each line read, and appending that information to a list called postal_list.\
+{\listtext	\'95	}alt_filtration(tweets,word,state) is a filter that works exactly as filtration does, except it takes the constant arguments word and state rather than **kwargs.\
+{\listtext	\'95	}alt_tweet_filter(tweets,word,state) is a filter that works exactly as tweet_filter does, except it takes the constant arguments word and state rather than **kwargs.\
+{\listtext	\'95	}most_positive(tweets,word) takes a list of tweets and a specific word from the user. It then calles the make_postal(csv) function to create a list of postal codes. It creates an initial minimum value and an initial state. For every state in the postal_list, the function filters all the tweets by that state containing the user's word. It calculates an average sentiment value for the tweets that satisfy that filter. If that value is greater than the initial minimum, it is named the current highest value, and its state is named the state of current highest value. After every state has been considered, the state with the highest sentiment for that value is printed. \
+{\listtext	\'95	}most_negative(tweets,word) works exactly like most_positive except it seeks a minimum value rather than a maximum value.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+I designed my sentiment functions after the functions to find and add geographic data. I decided to filter the tweets the way I did because it is easier to separate the **kwargs inputs this way, and I cannot use the set method because dictionaries are mutable.\
+\
+	For the extra credit, I also wrote a .csv file containing only the postal codes for states (it is called postal_codes.csv). This allowed me to condense my for loops in my most_positive and most_negative functions. \
+	}
