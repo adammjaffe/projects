@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+<g id="Small_Board">
+	<text transform="matrix(1 0 0 1 281.2551 301.8376)" fill="#6F352F" font-family="'Perpetua'" font-size="36">T</text>
+	<polyline fill="none" stroke="#6F342E" stroke-width="2" stroke-miterlimit="10" points="355.6,275.3 355.6,311.1 311.1,311.1 
+		311.1,275.3 	"/>
+	<text transform="matrix(1 0 0 1 328.6576 301.8376)" fill="#6F352F" font-family="'Perpetua'" font-size="36">I</text>
+	<text transform="matrix(1 0 0 1 364.2036 301.8381)" fill="#6F352F" font-family="'Perpetua'" font-size="36">C</text>
+	<polyline fill="none" stroke="#6F342E" stroke-width="2" stroke-miterlimit="10" points="275.3,311.1 311.1,311.1 311.1,355.6 
+		275.3,355.6 	"/>
+	<text transform="matrix(1 0 0 1 281.2551 344.6328)" fill="#6F352F" font-family="'Perpetua'" font-size="36">T</text>
+	<text transform="matrix(1 0 0 1 322.6371 344.6319)" fill="#6F352F" font-family="'Perpetua'" font-size="36">A</text>
+	<polyline fill="none" stroke="#6F342E" stroke-width="2" stroke-miterlimit="10" points="391.4,355.6 355.6,355.6 355.6,311.1 
+		391.4,311.1 	"/>
+	<text transform="matrix(1 0 0 1 364.2036 344.6319)" fill="#6F352F" font-family="'Perpetua'" font-size="36">C</text>
+	<text transform="matrix(1 0 0 1 281.2551 386.4765)" fill="#6F352F" font-family="'Perpetua'" font-size="36">T</text>
+	<polyline fill="none" stroke="#6F342E" stroke-width="2" stroke-miterlimit="10" points="311.1,391.3 311.1,355.6 355.6,355.6 
+		355.6,391.3 	"/>
+	<text transform="matrix(1 0 0 1 320.2113 386.477)" fill="#6F352F" font-family="'Perpetua'" font-size="36">O</text>
+	<text transform="matrix(1 0 0 1 366.102 386.477)" fill="#6F352F" font-family="'Perpetua'" font-size="36">E</text>
+</g>
+<g id="Large_Board">
+	<polyline fill="none" stroke="#6F352F" stroke-width="2" stroke-miterlimit="10" points="133.3,391.3 133.3,266.7 266.7,266.7 
+		266.7,391.3 	"/>
+	
+		<text transform="matrix(1 0 0 1 172.0117 360.0967)" fill="#6F352F" stroke="#6F342E" stroke-width="2" stroke-miterlimit="10" font-family="'Perpetua'" font-size="100">E</text>
+	
+		<text transform="matrix(1 0 0 1 41.0173 360.0977)" fill="#6F352F" stroke="#6F342E" stroke-width="2" stroke-miterlimit="10" font-family="'Perpetua'" font-size="100">T</text>
+	<polyline fill="none" stroke="#6F352F" stroke-width="2" stroke-miterlimit="10" points="391.8,266.7 266.7,266.6 266.7,133.2 
+		391.8,133.2 	"/>
+	
+		<text transform="matrix(1 0 0 1 303.6214 227.4228)" fill="#6F352F" stroke="#6F342E" stroke-width="2" stroke-miterlimit="10" font-family="'Perpetua'" font-size="100">A</text>
+	
+		<text transform="matrix(1 0 0 1 158.9502 227.4229)" fill="#6F352F" stroke="#6F342E" stroke-width="2" stroke-miterlimit="10" font-family="'Perpetua'" font-size="100">M</text>
+	<polyline fill="none" stroke="#6F352F" stroke-width="2" stroke-miterlimit="10" points="8.5,133.2 133.3,133.2 133.3,266.6 
+		8.5,266.6 	"/>
+	
+		<text transform="matrix(1 0 0 1 56.1784 227.4233)" fill="#6F352F" stroke="#6F342E" stroke-width="2" stroke-miterlimit="10" font-family="'Perpetua'" font-size="100">I</text>
+	
+		<text transform="matrix(1 0 0 1 305.1837 96.664)" fill="#6F352F" stroke="#6F342E" stroke-width="2" stroke-miterlimit="10" font-family="'Perpetua'" font-size="100">T</text>
+	<polyline fill="none" stroke="#6F352F" stroke-width="2" stroke-miterlimit="10" points="266.7,8.6 266.7,133.3 133.3,133.3 
+		133.3,8.6 	"/>
+	
+		<text transform="matrix(1 0 0 1 172.5001 96.664)" fill="#6F352F" stroke="#6F342E" stroke-width="2" stroke-miterlimit="10" font-family="'Perpetua'" font-size="100">L</text>
+	
+		<text transform="matrix(1 0 0 1 35.8168 96.6638)" fill="#6F352F" stroke="#6F342E" stroke-width="2" stroke-miterlimit="10" font-family="'Perpetua'" font-size="100">U</text>
+</g>
+</svg>
